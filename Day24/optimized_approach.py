@@ -5,11 +5,10 @@ class Solution:
 		n = len(arr)
 		res = [arr[0]]
 		for i in range(1, n):
-		    start, end = arr[i][0], arr[i][1]
-
-	        if start <= res[-1][1]:
-	            res[-1][1] = max(res[-1][1], end)
-            else:
-                res.append([start, end])
-        
-        return res
+			start, end = arr[i][0], arr[i][1]
+			if start <= res[-1][1]:
+				res[-1][1] = max(res[-1][1], end)
+			else:
+				res.append([start, end])
+		
+		return res
