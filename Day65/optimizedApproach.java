@@ -1,6 +1,6 @@
 
 class Node {
-    int data;
+    int value;
     Node next;
     Node(int value) {
         this.value = value;
