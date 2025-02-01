@@ -7,8 +7,8 @@ class Node
     Node(int d) {data = d; next = null; }
 }
 
+// Function to check if the linked list has a loop.
 class Solution {
-    // Function to check if the linked list has a loop.
     // Optimized Approach
     public static boolean detectLoop(Node head) {
         Node slow = head, fast = head;
