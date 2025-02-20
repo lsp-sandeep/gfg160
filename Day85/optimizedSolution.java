@@ -9,7 +9,8 @@ class Node {
 }
 
 class Solution {
-    ArrayList<Integer> inOrder(Node root) {
+    
+    ArrayList<Integer> inOrderRec(Node root, ArrayList<Integer> out) {
         /**
          * This function returns the inorder traversal of a given binary tree
          * 
@@ -18,15 +19,22 @@ class Solution {
          * Time Complexity: O(n)
          * Space Compelxity: O(h)
          **/
+        
+        if(root == null) return out;
+
+        inOrderRec(root.left, out);
+
+        out.add(root.data);
+
+        inOrderRec(root.right, out);
+        
+        return out;
+    }
+    
+    ArrayList<Integer> inOrder(Node root) {
          
         ArrayList<Integer> out = new ArrayList<>();
         
-        if(root == null) return out;
-        
-        out.addAll(inOrder(root.left));
-        out.add(root.data);
-        out.addAll(inOrder(root.right));
-        
-        return out;
+        return inOrderRec(root, out);
     }
 }
